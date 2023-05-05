@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.search {
+  height: 40px;
+  border: 2px gray solid;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 10px
+}
