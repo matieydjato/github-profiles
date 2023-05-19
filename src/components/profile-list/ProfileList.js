@@ -29,7 +29,11 @@ const ProfileList = () => {
     }
 
     return (
-        state.profiles.map((profile) => <Profile key={profile.id} avatar_url={profile.avatar_url} login={profile.login} html_url={profile.html_url}/>)
+        <div class="ms-Grid" dir="ltr">
+            <div class="ms-Grid-row" style={{ marginBottom: 5}}>
+                {state.profiles.map((profile) => <Profile key={profile.id} avatar_url={profile.avatar_url} login={profile.login} html_url={profile.html_url}/>)}                
+            </div>
+        </div>
     )
 }
 
