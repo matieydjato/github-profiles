@@ -5,6 +5,8 @@
   "dependencies": {
     "@fluentui/example-data": "^8.4.9",
     "@fluentui/react": "^8.109.4",
+    "@fluentui/react-examples": "^8.34.4",
+    "@fluentui/react-hooks": "^8.6.24",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

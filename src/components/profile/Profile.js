@@ -1,44 +1,24 @@
-import {
-    DocumentCard,
-    DocumentCardPreview,
-    DocumentCardTitle,
-  } from '@fluentui/react/lib/DocumentCard';
-  import { ImageFit } from '@fluentui/react/lib/Image';
-import { DefaultButton } from '@fluentui/react';
+import { DefaultButton, Persona, PersonaPresence, PersonaSize } from '@fluentui/react';
 
-const Profile = (props) => {
-    const previewProps = {
-        previewImages: [
-          {
-            name: 'Revenue stream proposal fiscal year 2016 version02.pptx',
-            linkProps: {
-              href: 'props.html_url',
-              target: '_blank',
-            },
-            previewImageSrc: props.avatar_url,
-            // iconSrc: TestImages.iconPpt,
-            imageFit: ImageFit.cover,
-            width: 318,
-            height: 196,
-          },
-        ],
+const Profile = ({login, avatar_url, html_url}) => {
+    const examplePersona = {
+      imageUrl: avatar_url,
+      imageInitials: login,
+      text: login,
+      url: html_url,
     };
     
     return (
-        <div class="ms-Grid-col ms-sm6 ms-md4 ms-lg3">
-            <DocumentCard
-                aria-label={props.login}
-                onClickHref={props.html_url}
-            >
-                <DocumentCardPreview {...previewProps} />
-                <DocumentCardTitle
-                    title={props.login}
-                    shouldTruncate
-                />
-                    <DefaultButton text="Go to profile" allowDisabledFocus/>
-
-            </DocumentCard>
+        <div className="ms-Grid-col ms-sm6 ms-md4 ms-lg3">
+            <Persona
+                    {...examplePersona}
+                    size={PersonaSize.size120}
+                    presence={PersonaPresence.away}
+                    imageAlt="Annie Lindqvist, status is away"
+                    url={html_url}
+            />
             <br/>
+            <DefaultButton href={html_url} text='Go to profile'/>
         </div>
     );
 };
